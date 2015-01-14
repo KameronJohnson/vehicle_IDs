@@ -1,0 +1,24 @@
+<h1>Vehicles</h1>
+
+<h3>Add a vehicle here:</h3>
+
+<form action="/vehicle" method="post">
+  <label for="make">Vehicle's make:</label>
+  <input id="make" name="make" type="text">
+
+  <label for="model">Vehicle's model:</label>
+  <input id="model" name="model" type="text">
+
+  <label for="year">Vehicle's year:</label>
+  <input id="year" name="year" type="text">
+
+  <button type="submit">Add Vehicle</button>
+</form>
+
+<!--below is where we loop through all vehicles on lot and display each vehicle -->
+<h3>Here are the vehicles on this lot: </h3>
+<ul>
+  <% @vehicles.each() do |vehicle| %>
+  <li><a href="/vehicles/<%= vehicle.id() %>"><%= vehicle.model() %></a></li>
+  <% end %>
+</ul>
